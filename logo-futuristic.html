@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESO — Futuristic Logo Concepts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F4EFE6;
+      --paper: #EDE7DA;
+      --ink: #0F0D0A;
+      --ink2: #2A2620;
+      --ink4: #7A7168;
+      --amber: #C8501A;
+      --amber2: #E8622A;
+      --bebas: 'Bebas Neue', sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+      --grotesk: 'Space Grotesk', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #100d0b;
+      background-image:
+        radial-gradient(circle at 18% 12%, rgba(200, 80, 26, .10), transparent 40%),
+        radial-gradient(circle at 85% 88%, rgba(232, 98, 42, .08), transparent 45%);
+      font-family: var(--mono);
+      min-height: 100vh;
+      padding: 64px 32px 100px;
+      color: var(--cream);
+    }
+
+    .head { max-width: 1180px; margin: 0 auto 8px; }
+    .kicker {
+      font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase;
+      color: var(--amber2); font-weight: 500;
+    }
+    h1 {
+      font-family: var(--grotesk); font-weight: 600;
+      font-size: clamp(24px, 4vw, 38px); letter-spacing: -0.02em;
+      margin: 10px 0 6px; color: var(--cream);
+    }
+    .sub {
+      font-size: 12px; color: var(--ink4); line-height: 1.7; max-width: 640px;
+    }
+
+    .concept { max-width: 1180px; margin: 56px auto 0; }
+    .concept-head {
+      display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+      border-bottom: 1px solid rgba(244, 239, 230, .10);
+      padding-bottom: 14px; margin-bottom: 2px;
+    }
+    .num {
+      font-family: var(--grotesk); font-weight: 700; font-size: 13px;
+      color: var(--amber2); letter-spacing: 0.05em;
+    }
+    .cname {
+      font-family: var(--grotesk); font-weight: 600; font-size: 20px;
+      color: var(--cream); letter-spacing: -0.01em;
+    }
+    .cdesc { font-size: 11.5px; color: var(--ink4); margin-left: auto; max-width: 460px; text-align: right; line-height: 1.6; }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    @media (max-width: 720px) { .row { grid-template-columns: 1fr; } .cdesc { text-align: left; margin-left: 0; } }
+
+    .cell {
+      min-height: 230px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 26px;
+      position: relative;
+    }
+    .cell .tag {
+      position: absolute; top: 14px; left: 16px;
+      font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+    }
+
+    /* light + dark theming via CSS vars consumed by inline SVG */
+    .light { background: var(--cream); --mi: var(--ink); --ma: var(--amber); --mc: var(--cream); }
+    .light .tag { color: var(--ink4); }
+    .light .lockup .word { color: var(--ink); }
+    .light .lockup .dot { color: var(--amber); }
+
+    .dark { background: #16120f; --mi: var(--cream); --ma: var(--amber2); --mc: #16120f; }
+    .dark .tag { color: #6a625a; }
+    .dark .mark { filter: drop-shadow(0 0 7px rgba(232, 98, 42, .45)); }
+    .dark .lockup .word { color: var(--cream); }
+    .dark .lockup .dot { color: var(--amber2); }
+
+    .mark { width: 88px; height: 88px; display: block; }
+
+    .lockup { display: flex; align-items: center; gap: 14px; }
+    .lockup .mark { width: 40px; height: 40px; }
+    .lockup .word {
+      font-family: var(--bebas); font-size: 38px; line-height: 1; letter-spacing: 0.04em;
+    }
+    .lockup .word .dot { color: var(--ma, var(--amber)); }
+
+    /* favicon strip */
+    .fav-strip {
+      max-width: 1180px; margin: 14px auto 0;
+      display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+      background: #16120f; padding: 22px 26px;
+      border: 1px solid rgba(244, 239, 230, .07);
+    }
+    .fav-strip .lbl { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #6a625a; }
+    .fav-item { display: flex; flex-direction: column; align-items: center; gap: 8px; --mi: var(--cream); --ma: var(--amber2); --mc: #16120f; }
+    .fav-item svg { display: block; }
+    .fav-item span { font-size: 9px; color: #6a625a; letter-spacing: 0.1em; }
+
+    .foot { max-width: 1180px; margin: 70px auto 0; font-size: 11px; color: var(--ink4); line-height: 1.8; }
+    .foot b { color: var(--cream); font-weight: 500; }
+  </style>
+</head>
+
+<body>
+
+  <div class="head">
+    <div class="kicker">ESO · Identity Exploration · enejo.tech</div>
+    <h1>Futuristic logo concepts</h1>
+    <p class="sub">Four directions for the <b style="color:var(--cream)">ESO</b> mark — geometric, monoline,
+      node-driven. Built on the existing brand palette (amber / ink / cream) so any pick drops straight into the
+      portfolio. Each shown on light + dark with a neon-glow variant and a nav lockup. All vector — infinitely scalable.</p>
+  </div>
+
+  <!-- CONCEPT 1 — ORBIT -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="num">01</span>
+      <span class="cname">Orbit</span>
+      <span class="cdesc">A core "E" inside an orbital ring with a satellite node — a nod to ESO / observatory &amp;
+        systems thinking. Cosmic + engineered.</span>
+    </div>
+    <div class="row">
+      <div class="cell light"><span class="tag">Light</span>
+        <div class="mark" data-mark="orbit"></div>
+        <div class="lockup"><div class="mark" data-mark="orbit"></div><span class="word">ESO<span class="dot">.</span></span></div>
+      </div>
+      <div class="cell dark"><span class="tag">Dark · neon</span>
+        <div class="mark" data-mark="orbit"></div>
+        <div class="lockup"><div class="mark" data-mark="orbit"></div><span class="word">ESO<span class="dot">.</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT 2 — APERTURE -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="num">02</span>
+      <span class="cname">Aperture</span>
+      <span class="cdesc">The "O" rendered as a segmented aperture/portal ring around a mono "E". Reads as a lens,
+        a shutter, a gateway — clean and unmistakably tech.</span>
+    </div>
+    <div class="row">
+      <div class="cell light"><span class="tag">Light</span>
+        <div class="mark" data-mark="aperture"></div>
+        <div class="lockup"><div class="mark" data-mark="aperture"></div><span class="word">ESO<span class="dot">.</span></span></div>
+      </div>
+      <div class="cell dark"><span class="tag">Dark · neon</span>
+        <div class="mark" data-mark="aperture"></div>
+        <div class="lockup"><div class="mark" data-mark="aperture"></div><span class="word">ESO<span class="dot">.</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT 3 — HEX CORE -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="num">03</span>
+      <span class="cname">Hex Core</span>
+      <span class="cdesc">An evolution of your current hexagon mark — now a circuit "chip" with connected vertex
+        nodes and a glowing core. Futuristic, but continuous with what you have.</span>
+    </div>
+    <div class="row">
+      <div class="cell light"><span class="tag">Light</span>
+        <div class="mark" data-mark="hex"></div>
+        <div class="lockup"><div class="mark" data-mark="hex"></div><span class="word">ESO<span class="dot">.</span></span></div>
+      </div>
+      <div class="cell dark"><span class="tag">Dark · neon</span>
+        <div class="mark" data-mark="hex"></div>
+        <div class="lockup"><div class="mark" data-mark="hex"></div><span class="word">ESO<span class="dot">.</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT 4 — KINETIC -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="num">04</span>
+      <span class="cname">Kinetic</span>
+      <span class="cdesc">The "E" built from three forward chevrons + speed lines — motion, momentum, "builder &amp;
+        shipper". The most expressive, energetic direction.</span>
+    </div>
+    <div class="row">
+      <div class="cell light"><span class="tag">Light</span>
+        <div class="mark" data-mark="kinetic"></div>
+        <div class="lockup"><div class="mark" data-mark="kinetic"></div><span class="word">ESO<span class="dot">.</span></span></div>
+      </div>
+      <div class="cell dark"><span class="tag">Dark · neon</span>
+        <div class="mark" data-mark="kinetic"></div>
+        <div class="lockup"><div class="mark" data-mark="kinetic"></div><span class="word">ESO<span class="dot">.</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- favicon scalability check -->
+  <p class="foot" style="margin-bottom:12px"><b>Favicon / small-size legibility</b> — same marks at 48 / 32 / 16 px:</p>
+  <div class="fav-strip">
+    <span class="lbl">Orbit</span>
+    <div class="fav-item"><div data-mark="orbit" data-size="48"></div></div>
+    <div class="fav-item"><div data-mark="orbit" data-size="32"></div></div>
+    <div class="fav-item"><div data-mark="orbit" data-size="16"></div></div>
+    <span class="lbl" style="margin-left:18px">Aperture</span>
+    <div class="fav-item"><div data-mark="aperture" data-size="48"></div></div>
+    <div class="fav-item"><div data-mark="aperture" data-size="32"></div></div>
+    <div class="fav-item"><div data-mark="aperture" data-size="16"></div></div>
+    <span class="lbl" style="margin-left:18px">Hex</span>
+    <div class="fav-item"><div data-mark="hex" data-size="48"></div></div>
+    <div class="fav-item"><div data-mark="hex" data-size="32"></div></div>
+    <div class="fav-item"><div data-mark="hex" data-size="16"></div></div>
+    <span class="lbl" style="margin-left:18px">Kinetic</span>
+    <div class="fav-item"><div data-mark="kinetic" data-size="48"></div></div>
+    <div class="fav-item"><div data-mark="kinetic" data-size="32"></div></div>
+    <div class="fav-item"><div data-mark="kinetic" data-size="16"></div></div>
+  </div>
+
+  <p class="foot">
+    <b>How these were made.</b> Inspiration pulled live via Playwright from current (2026) tech-logo work
+    (Behance "futuristic monogram" — abstract geometric monograms, modular node terminals, monoline strokes),
+    then designed against your brand tokens using the UI/UX Pro Max system.<br>
+    <b>Next:</b> tell me which number you like (and light/dark feel) and I'll wire it into the nav of
+    <b>index.html</b>, generate a matching <b>favicon</b>, and refine the chosen one.
+  </p>
+
+  <script>
+    // Mark library (single source, rendered everywhere)
+    const marks = {
+      orbit: `
+        <svg class="mark-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="40" cy="40" rx="37" ry="13.5" transform="rotate(-22 40 40)" stroke="var(--ma)" stroke-width="1.4" opacity=".9"/>
+          <circle cx="40" cy="40" r="19" stroke="var(--mi)" stroke-width="2"/>
+          <line x1="33" y1="31" x2="33" y2="49" stroke="var(--mi)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="33" y1="31" x2="47" y2="31" stroke="var(--mi)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="33" y1="40" x2="44" y2="40" stroke="var(--ma)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="33" y1="49" x2="47" y2="49" stroke="var(--mi)" stroke-width="2" stroke-linecap="round"/>
+          <g transform="rotate(-22 40 40)"><circle cx="77" cy="40" r="3.4" fill="var(--ma)"/></g>
+        </svg>`,
+      aperture: `
+        <svg class="mark-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="34" stroke="var(--ma)" stroke-width="2.6" stroke-dasharray="22 9" stroke-linecap="round"/>
+          <circle cx="40" cy="40" r="25" stroke="var(--mi)" stroke-width="1.3" opacity=".45"/>
+          <line x1="34" y1="30" x2="34" y2="50" stroke="var(--mi)" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="34" y1="30" x2="46" y2="30" stroke="var(--mi)" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="34" y1="40" x2="43" y2="40" stroke="var(--ma)" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="34" y1="50" x2="46" y2="50" stroke="var(--mi)" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>`,
+      hex: `
+        <svg class="mark-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 7 L68 23.5 V56.5 L40 73 L12 56.5 V23.5 Z" stroke="var(--mi)" stroke-width="1.8" stroke-linejoin="round"/>
+          <line x1="40" y1="7"  x2="40" y2="16" stroke="var(--ma)" stroke-width="1.3"/>
+          <line x1="68" y1="56.5" x2="60" y2="52" stroke="var(--ma)" stroke-width="1.3"/>
+          <line x1="12" y1="23.5" x2="20" y2="28" stroke="var(--ma)" stroke-width="1.3"/>
+          <line x1="32" y1="31" x2="32" y2="49" stroke="var(--mi)" stroke-width="2.2" stroke-linecap="square"/>
+          <line x1="32" y1="31" x2="47" y2="31" stroke="var(--mi)" stroke-width="2.2" stroke-linecap="square"/>
+          <line x1="32" y1="40" x2="44" y2="40" stroke="var(--ma)" stroke-width="2.2" stroke-linecap="square"/>
+          <line x1="32" y1="49" x2="47" y2="49" stroke="var(--mi)" stroke-width="2.2" stroke-linecap="square"/>
+          <circle cx="40" cy="7" r="2.1" fill="var(--ma)"/>
+          <circle cx="68" cy="23.5" r="2.1" fill="var(--ma)"/>
+          <circle cx="68" cy="56.5" r="2.1" fill="var(--ma)"/>
+          <circle cx="40" cy="73" r="2.1" fill="var(--ma)"/>
+          <circle cx="12" cy="56.5" r="2.1" fill="var(--ma)"/>
+          <circle cx="12" cy="23.5" r="2.1" fill="var(--ma)"/>
+        </svg>`,
+      kinetic: `
+        <svg class="mark-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="34" stroke="var(--mi)" stroke-width="1.5" opacity=".22"/>
+          <line x1="28" y1="27" x2="28" y2="53" stroke="var(--mi)" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M28 28 H48" stroke="var(--mi)" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M45 24 L51 28 L45 32" stroke="var(--mi)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M28 40 H42" stroke="var(--ma)" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M39 36 L45 40 L39 44" stroke="var(--ma)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M28 52 H48" stroke="var(--mi)" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M45 48 L51 52 L45 56" stroke="var(--mi)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="17" y1="28" x2="22" y2="28" stroke="var(--ma)" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+          <line x1="14" y1="40" x2="22" y2="40" stroke="var(--ma)" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+          <line x1="17" y1="52" x2="22" y2="52" stroke="var(--ma)" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+        </svg>`
+    };
+
+    document.querySelectorAll('[data-mark]').forEach(el => {
+      const svg = marks[el.dataset.mark];
+      if (!svg) return;
+      el.innerHTML = svg;
+      const size = el.dataset.size;
+      const s = el.querySelector('svg');
+      if (size) {
+        s.style.width = size + 'px';
+        s.style.height = size + 'px';
+        s.style.filter = 'drop-shadow(0 0 4px rgba(232,98,42,.4))';
+      } else {
+        s.style.width = '100%';
+        s.style.height = '100%';
+      }
+    });
+  </script>
+</body>
+
+</html>
