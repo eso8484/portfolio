@@ -1104,7 +1104,7 @@
 
     .tl-tag {
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 14px;
       font-size: 11px;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -1113,6 +1113,21 @@
       border: 1px solid rgba(200, 80, 26, .3);
       padding: 3px 10px;
       background: var(--amber-t2)
+    }
+
+    /* role description under each timeline entry */
+    .tl-desc {
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: var(--ink3);
+      font-weight: 400;
+      margin: 12px auto 0;
+      max-width: 640px
+    }
+
+    .tl-desc b {
+      color: var(--ink);
+      font-weight: 500
     }
 
     /* ══════════════════════════════
@@ -1442,8 +1457,13 @@
       }
 
       .tl-item {
-        grid-template-columns: 100px 1px 1fr;
+        grid-template-columns: 120px 1px 1fr;
         gap: 0 20px
+      }
+
+      .tl-year {
+        font-size: 11px;
+        padding-right: 20px
       }
 
       .stat-row {
@@ -1481,14 +1501,26 @@
         font-size: clamp(52px, 16vw, 90px)
       }
 
+      /* timeline stacks — the year becomes a label above each entry,
+         so descriptions keep the full column width */
       .tl-item {
-        grid-template-columns: 80px 1px 1fr;
-        gap: 0 14px
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 26px 16px
+      }
+
+      .tl-line-col {
+        display: none
       }
 
       .tl-year {
-        font-size: 9px;
-        padding-right: 14px
+        font-size: 11px;
+        text-align: center;
+        padding: 0 0 8px
+      }
+
+      .tl-desc {
+        max-width: 100%
       }
 
       .projects-grid-top {
@@ -1680,7 +1712,7 @@
     <div class="hero-top">
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        AI Engineer &amp; Systems Builder — Abuja, Nigeria
+        AI Data Annotation &amp; LLM Evaluation — Abuja, Nigeria
       </div>
       <h1 class="hero-h1">
         Engineering<br>
@@ -1691,8 +1723,9 @@
     </div>
     <div class="hero-bottom">
       <p class="hero-sub">
-        <strong>Enejo Sunday Oche</strong> — from circuit boards to cloud deployments to AI agents.
-        A multidisciplinary builder who ships real systems across hardware, AI automation, and full-stack web.
+        <strong>Enejo Sunday Oche</strong> — I annotate and evaluate the video, speech and language
+        data that trains modern AI, and I build the automation systems and full-stack products
+        around it. Electrical engineer by training.
       </p>
       <div class="hero-center">
         <div class="scroll-line-v"></div>
@@ -1737,28 +1770,46 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p>
-            I started where most software engineers don't — <strong>deep inside hardware</strong>.
+            I started where most AI specialists don't — <strong>deep inside hardware</strong>.
             My undergraduate thesis at FUTMinna was an IoT-based Automatic Transfer Switch using TRIAC
-            technology: real circuits, real power electronics, real stakes. That foundation shaped how
-            I build everything that came after.
+            technology: real circuits, real power electronics, real stakes. Electrical &amp; Electronics
+            Engineering taught me to be exact, and that habit carries into everything I do now.
           </p>
           <p>
-            When I transitioned into AI and full-stack development, I didn't just write apps — I built
-            <em>systems</em>. Self-hosted n8n pipelines orchestrating LLM agents. Model Context Protocol
-            servers connecting AI to live tools. Production platforms with Supabase backends serving
-            real users across Nigeria.
+            Today that exactness goes into <strong>AI training data</strong>. I've annotated and verified
+            <strong>1,000+ short video clips</strong> for egocentric footage models, evaluated Automatic
+            Speech Recognition output for accuracy, completeness and contextual correctness, and ranked
+            competing model responses for relevance, accuracy, helpfulness and clarity as part of
+            <em>RLHF</em> comparison.
           </p>
           <p>
-            Today I operate across two professional lanes: <strong>freelance AI Automation Consultant</strong>
-            — helping businesses ship intelligent systems — and <strong>Instructor at Jobberman</strong>,
-            a Mastercard Foundation initiative empowering the next generation of African tech talent.
+            I also build — self-hosted n8n pipelines orchestrating LLM agents, Model Context Protocol servers
+            connecting AI to live tools, production platforms with Supabase backends serving real users across
+            Nigeria. And I teach as <strong>Instructor at Jobberman</strong>, a Mastercard Foundation
+            initiative empowering the next generation of African tech talent.
           </p>
           <p>
-            I build at the intersection where hardware knowledge meets AI reasoning meets real market needs —
-            a rare vantage point that lets me see solutions others miss.
+            Hardware discipline, annotation rigour and the ability to ship — a combination that makes me
+            useful wherever AI has to meet the real world.
           </p>
         </div>
         <div class="about-aside reveal d2">
+          <div class="role-row">
+            <div class="role-icon-box">🎬</div>
+            <div class="role-meta">
+              <div class="role-title-t">Video Annotation Specialist</div>
+              <div class="role-org-t">Atlas Capture · AI Training Data · Human Verifier</div>
+            </div>
+            <div class="role-arrow">→</div>
+          </div>
+          <div class="role-row">
+            <div class="role-icon-box">🧠</div>
+            <div class="role-meta">
+              <div class="role-title-t">AI Data Annotation Specialist</div>
+              <div class="role-org-t">LLM Evaluation · RLHF · NER · Dataset QA</div>
+            </div>
+            <div class="role-arrow">→</div>
+          </div>
           <div class="role-row">
             <div class="role-icon-box">🤖</div>
             <div class="role-meta">
@@ -1770,12 +1821,11 @@
           <div class="role-row">
             <div class="role-icon-box">🎓</div>
             <div class="role-meta">
-              <div class="role-title-t">Instructor & Facilitator</div>
+              <div class="role-title-t">Instructor &amp; Facilitator</div>
               <div class="role-org-t">Jobberman · Mastercard Foundation</div>
             </div>
             <div class="role-arrow">→</div>
           </div>
-
         </div>
       </div>
     </div>
@@ -1992,15 +2042,34 @@
       <h2 class="s-title reveal">Career <span class="amber">Timeline</span></h2>
       <div class="tl-wrap">
         <div class="tl-item">
-          <div class="tl-year">2019 — 2023</div>
+          <div class="tl-year">2016 — 2023</div>
           <div class="tl-line-col">
             <div class="tl-dot"></div>
             <div class="tl-vert"></div>
           </div>
           <div class="tl-content">
             <div class="tl-role">B.Eng Electrical &amp; Electronics Engineering</div>
-            <div class="tl-org">Federal University of Technology Minna (FUTMinna) · Nigeria</div>
+            <div class="tl-org">Federal University of Technology Minna (FUTMinna) · Upper Division, CGPA 4.3/5.0</div>
+            <p class="tl-desc">Trained in industrial control, automation and sensor-driven systems — the engineering
+              discipline that underpins everything I do with data today.</p>
             <span class="tl-tag">Academic Foundation</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2016 — 2023</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Data Scientist</div>
+            <div class="tl-org">2Conifer Health Solutions · Houston, Texas</div>
+            <p class="tl-desc">Delivered machine learning solutions for health informatics within a cross-functional
+              AI team. Led an end-to-end ML pipeline that cut training and deployment compute costs by roughly
+              <b>90%</b> across two core models while lifting recall at the target precision threshold by up to
+              <b>10%</b>. Designed feature-engineering algorithms that cut memory use by up to <b>32×</b> for
+              high-cardinality categorical features in tree-based models.</p>
+            <span class="tl-tag">Machine Learning</span>
           </div>
         </div>
         <div class="tl-item">
@@ -2012,19 +2081,149 @@
           <div class="tl-content">
             <div class="tl-role">Undergraduate Thesis — IoT Auto Transfer Switch</div>
             <div class="tl-org">TRIAC Technology · Power Electronics · IoT · MATLAB Simulation</div>
+            <p class="tl-desc">Designed and built a smart energy switching system integrating IoT sensors, control
+              logic and power electronics.</p>
             <span class="tl-tag">Research &amp; Hardware</span>
           </div>
         </div>
         <div class="tl-item">
-          <div class="tl-year">2023 — Now</div>
+          <div class="tl-year">2023 — 2024</div>
           <div class="tl-line-col">
             <div class="tl-dot"></div>
             <div class="tl-vert"></div>
           </div>
           <div class="tl-content">
-            <div class="tl-role">Freelance AI Automation Consultant &amp; Web Developer</div>
-            <div class="tl-org">n8n · Claude API · React/Next.js · Docker · MCP · Self-hosted Infra</div>
+            <div class="tl-role">Software Engineering Program</div>
+            <div class="tl-org">African Leadership X (ALX) · Remote</div>
+            <span class="tl-tag">Software Engineering</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023 — 2024</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Corps Member — Electrical Engineer</div>
+            <div class="tl-org">Federal Capital Development Authority (FCDA) · Abuja, Nigeria</div>
+            <p class="tl-desc">Managed end-to-end electrical installations, diagnostics, testing and commissioning
+              across residential and commercial projects, ensuring compliance with Nigerian safety standards and
+              building codes. Produced inspection and progress reports documenting installation status and defects
+              for project stakeholders and senior engineers. Interpreted technical drawings and specifications to
+              coordinate on-site works across multiple concurrent projects.</p>
+            <span class="tl-tag">Engineering Practice</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023 — 2024</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">AI Data Annotation Specialist</div>
+            <div class="tl-org">Mercor AI (Contract) · Remote</div>
+            <p class="tl-desc">Annotated and reviewed datasets supporting Large Language Model, NLP, Computer Vision
+              and Generative AI development. Ran human-in-the-loop evaluations, scoring AI-generated output against
+              project-specific quality criteria and annotation guidelines. Ranked competing AI responses for
+              relevance, accuracy, helpfulness and clarity as part of <b>RLHF</b> response comparison. Performed
+              Named Entity Recognition, sentiment analysis and text classification, plus dataset validation and
+              quality audits.</p>
+            <span class="tl-tag">AI Training Data</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023 — 2024</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Technical Writer</div>
+            <div class="tl-org">Wondershare Software Company · Remote</div>
+            <p class="tl-desc">Wrote and published how-to guides, tutorials and software documentation, translating
+              complex product features for technical and non-technical readers. Edited documentation for clarity,
+              consistency and usability, aligning it with product functionality and brand standards.</p>
+            <span class="tl-tag">Technical Writing</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024 — 2025</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">AI Data Transcription &amp; Quality Review Specialist</div>
+            <div class="tl-org">TELUS International (Contract) · Remote</div>
+            <p class="tl-desc">Evaluated Automatic Speech Recognition (ASR) output for transcription accuracy,
+              completeness, grammar and contextual correctness. Performed speaker identification and timestamp
+              synchronisation to raise speech dataset quality. Flagged transcription errors, inconsistencies and
+              annotation defects for correction against detailed project guidelines.</p>
+            <span class="tl-tag">Speech Data Quality</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">AI Automation Consultant</div>
+            <div class="tl-org">Freelance · Abuja, Nigeria</div>
+            <p class="tl-desc">Built AI agent systems on the Claude and OpenAI APIs for business workflow automation.
+              Automated multi-step business processes in n8n, including email routing pipelines, agentic task
+              orchestration and multi-trigger event systems.</p>
             <span class="tl-tag">Client Work</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">AI Research Participant</div>
+            <div class="tl-org">dScout Inc. · Remote</div>
+            <p class="tl-desc">Delivered structured written product feedback for global brands across fintech,
+              healthcare and e-commerce, in research supporting large language model fine-tuning.</p>
+            <span class="tl-tag">AI Research</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025 — 2026</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Video Annotation Specialist</div>
+            <div class="tl-org">Atlas Capture · Remote</div>
+            <p class="tl-desc">Annotated <b>1,000+</b> short video clips for AI training data, describing actions and
+              events in egocentric (first-person) footage. Verified AI-generated annotations against source footage
+              on the Human Verifier track, correcting every label that failed project accuracy criteria. Produced
+              segment-by-segment annotations from scratch, holding consistent labelling quality across multiple
+              concurrent task types and distinguishing subtle differences in movement, object interaction and action
+              sequences.</p>
+            <span class="tl-tag">Video Annotation</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2026</div>
+          <div class="tl-line-col">
+            <div class="tl-dot"></div>
+            <div class="tl-vert"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Prompt Evaluation Contributor</div>
+            <div class="tl-org">PulseLab AI (Contract) · Remote</div>
+            <p class="tl-desc">Authored and refined prompts for YouTube's AI search mode, improving the relevance of
+              returned results against user query intent. Assessed model output against prompt intent and reworded
+              prompts wherever responses missed the mark.</p>
+            <span class="tl-tag">Prompt Evaluation</span>
           </div>
         </div>
         <div class="tl-item current">
@@ -2039,8 +2238,6 @@
             <span class="tl-tag">Education</span>
           </div>
         </div>
-
-
       </div>
     </div>
   </section>
@@ -2133,7 +2330,7 @@
       <a href="https://x.com/oche_21" target="_blank">X</a>
       <a href="#hero">Top ↑</a>
     </div>
-    <div class="ft-right">© 2025 Enejo Sunday Oche</div>
+    <div class="ft-right">© 2026 Enejo Sunday Oche</div>
   </footer>
 
   <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
